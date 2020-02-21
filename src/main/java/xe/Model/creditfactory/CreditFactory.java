@@ -1,9 +1,11 @@
 package xe.Model.creditfactory;
 
+import xe.View.databank.CreditInput;
+
 public class CreditFactory {
-    public Credit getCredit(xe.View.databank.Credit credit){
+    public Credit getCredit(CreditInput creditInput){
         Credit toReturn = null;
-        switch (credit){
+        switch (creditInput){
             case PREPAYMENT_LOAN:
                 toReturn = new PrepaymentCredit();
                 break;

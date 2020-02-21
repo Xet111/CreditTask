@@ -1,13 +1,14 @@
 package xe.Model.creditfactory;
+import xe.View.databank.AmountOfMoney;
 import xe.View.databank.Bank;
 public abstract class Credit {
-    private int amount;
+    private AmountOfMoney amount;
     private float monthPercent;
     private int term;
     private String bank;
 
-    Credit(){
-        this.amount = 100 + (int)Math.random()* 1000;
+    public Credit(){
+        this.amount = AmountOfMoney.FIVE_HUNDRED;
         this.monthPercent = 0.5f+(float)Math.random()*2.5f;
         this.term = 1 +(int)Math.random()*12;
         switch ((int)Math.random()*3){
@@ -25,7 +26,7 @@ public abstract class Credit {
         }
     }
 
-    public int getAmount() {
+    public AmountOfMoney getAmount() {
         return amount;
     }
 
@@ -37,7 +38,7 @@ public abstract class Credit {
         return term;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(AmountOfMoney amount) {
         this.amount = amount;
     }
 

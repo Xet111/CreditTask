@@ -1,13 +1,13 @@
 package xe.View.databank;
 
-public enum Credit {
+public enum CreditInput {
     PREPAYMENT_LOAN("loan.prepay"),
     PREPAYMENT_INCREASE("loan.prepayment.increase"),
     INCREASE_PAYMENT_LINE("loan.increase");
 
 
     private String creditName;
-    Credit(String creditName){
+    CreditInput(String creditName){
         this.creditName = creditName;
 
     }

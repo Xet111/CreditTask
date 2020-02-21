@@ -13,10 +13,8 @@ public class View {
     public static final String USER_QUIT = "user.quit";
     public static final String USER_CREDIT_AVAILABLE = "user.credit.available";
     public static final String USER_CREDIT = "user.credit.header";
-    public static final String USER_CREDIT9 = "user.tours.details";
-    public static final String USER_CREDIT_ = "";
-    public static final String USER_CREDIT_g = "";
-    public static final String USER_CREDIT_d = "";
+    public static final String USER_CREDIT_AMOUNT = "user.input.amount";
+    public static final String USER_CREDIT_TERM= "";
     public static final String CREDIT_AMOUNT = "";
     public static final String WRONG_INPUT = "input.wrong";
     public static final String INPUT_MAIN_MENU = "input.mainmenu";

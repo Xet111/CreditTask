@@ -3,6 +3,7 @@ package xe.Controller;
 import xe.Model.Model;
 import xe.SupportedLanguages;
 import xe.View.View;
+import xe.View.databank.AmountOfMoney;
 
 import java.util.Scanner;
 
@@ -20,9 +21,7 @@ public class Controller {
     public void processUser(){
         Scanner scanner = new Scanner(System.in);
         selectLanguage(scanner);
-        view.printMessage(View.INPUT_MAIN_MENU);
-
-
+        selectAmountOfMoney(scanner);
 
     }
 
@@ -35,6 +34,19 @@ public class Controller {
         view.setLocalization(selectedLang);
 
     }
+    private AmountOfMoney selectAmountOfMoney(Scanner sc){
+        AmountOfMoney selectedAmount;
+        for(AmountOfMoney option: AmountOfMoney.values()){
+            view.printMessage(option.toString());
+        }
+        selectedAmount = AmountOfMoney.values()[inputFromMenuBar(inputFromScanner(sc,buildRegEx(3)))];
+        return selectedAmount;
+
+
+    }
+
+
+
     private String inputFromScanner(Scanner scanner, String regEx){
 
         String res;
@@ -52,7 +64,6 @@ public class Controller {
     }
     private int inputFromMenuBar(String input){
         return inputTokens.indexOf(input);
-
     }
 
 
