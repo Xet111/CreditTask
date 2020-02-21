@@ -1,16 +1,18 @@
 package xe.Model.creditfactory;
 import xe.View.databank.AmountOfMoney;
 import xe.View.databank.Bank;
+import xe.View.databank.Term;
+
 public abstract class Credit {
     private AmountOfMoney amount;
     private float monthPercent;
-    private int term;
+    private Term term;
     private String bank;
 
     public Credit(){
         this.amount = AmountOfMoney.FIVE_HUNDRED;
         this.monthPercent = 0.5f+(float)Math.random()*2.5f;
-        this.term = 1 +(int)Math.random()*12;
+        this.term = Term.THREE_MONTH;
         switch ((int)Math.random()*3){
             case 0:
                 this.bank = Bank.PRIVATBANK.toString();
@@ -34,7 +36,7 @@ public abstract class Credit {
         return monthPercent;
     }
 
-    public int getTerm() {
+    public Term getTerm() {
         return term;
     }
 
@@ -46,8 +48,25 @@ public abstract class Credit {
         this.monthPercent = monthPercent;
     }
 
-    public void setTerm(int term) {
+    public void setTerm(Term term) {
         this.term = term;
     }
 
+    public String getBank() {
+        return bank;
+    }
+
+    public void setBank(String bank) {
+        this.bank = bank;
+    }
+
+    @Override
+    public String toString() {
+        return "Credit{" +
+                "amount=" + amount +
+                ", monthPercent=" + monthPercent +
+                ", term=" + term +
+                ", bank='" + bank + '\'' +
+                '}';
+    }
 }

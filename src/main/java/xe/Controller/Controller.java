@@ -21,7 +21,7 @@ public class Controller {
     public void processUser(){
         Scanner scanner = new Scanner(System.in);
         selectLanguage(scanner);
-        selectAmountOfMoney(scanner);
+       model.filterOnAmount(selectAmountOfMoney(scanner));
 
     }
 

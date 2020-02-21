@@ -17,11 +17,9 @@ public class View {
     public static final String USER_CREDIT_TERM= "";
     public static final String CREDIT_AMOUNT = "";
     public static final String WRONG_INPUT = "input.wrong";
-    public static final String INPUT_MAIN_MENU = "input.mainmenu";
     public static final String INPUT_RETURN = "input.return";
     public static final String INPUT_EXIT = "input.exit";
-    public static final String SEPARATOR = ", ";
-    public static final String TERMINATOR = ".";
+
 
     public View() {
         currentLanguage = SupportedLanguages.ENGLISH;
