@@ -10,10 +10,33 @@ public abstract class Credit {
     private String bank;
 
     public Credit(){
-        this.amount = AmountOfMoney.FIVE_HUNDRED;
+        switch ((int)(Math.random()*3)){
+            case 0:
+                this.amount = AmountOfMoney.ONE_HUNDRED;
+                break;
+            case 1:
+                this.amount = AmountOfMoney.FIVE_HUNDRED;
+                break;
+            case 2:
+                this.amount = AmountOfMoney.ONE_THOUSAND;
+                break;
+        }
+
         this.monthPercent = 0.5f+(float)Math.random()*2.5f;
-        this.term = Term.THREE_MONTH;
-        switch ((int)Math.random()*3){
+
+        switch ((int)(Math.random()*3)){
+            case 0:
+                this.term = Term.ONE_MONTH;
+                break;
+            case 1:
+                this.term = Term.TWO_MONTH;
+                break;
+            case 2:
+                this.term = Term.THREE_MONTH;
+                break;
+        }
+
+        switch ((int)(Math.random()*4)){
             case 0:
                 this.bank = Bank.PRIVATBANK.toString();
                 break;

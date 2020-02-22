@@ -1,9 +1,12 @@
 package xe.Controller;
 
 import xe.Model.Model;
+import xe.Model.creditfactory.Credit;
 import xe.SupportedLanguages;
 import xe.View.View;
 import xe.View.databank.AmountOfMoney;
+import xe.View.databank.CreditInput;
+import xe.View.databank.Term;
 
 import java.util.Scanner;
 
@@ -20,8 +23,14 @@ public class Controller {
 
     public void processUser(){
         Scanner scanner = new Scanner(System.in);
+        model.generateArray(60);
+        view.printArray(model.getActiveCredit());
         selectLanguage(scanner);
-       model.filterOnAmount(selectAmountOfMoney(scanner));
+        model.filterOnAmount(selectAmountOfMoney(scanner));
+        model.filterOnTerm(selectTermOfCredit(scanner));
+        model.filterOnCredit(selectCredit(scanner));
+        view.printArray(model.getChosenCredit());
+
 
     }
 
@@ -41,8 +50,22 @@ public class Controller {
         }
         selectedAmount = AmountOfMoney.values()[inputFromMenuBar(inputFromScanner(sc,buildRegEx(3)))];
         return selectedAmount;
-
-
+    }
+    private Term selectTermOfCredit(Scanner sc){
+        Term selectedTerm;
+        for(Term option: Term.values()){
+            view.printMessage(option.toString());
+        }
+         selectedTerm = Term.values()[inputFromMenuBar(inputFromScanner(sc,buildRegEx(3)))];
+        return selectedTerm;
+    }
+    private CreditInput selectCredit(Scanner sc){
+        CreditInput selectedCredit;
+        for(CreditInput option: CreditInput.values()){
+            view.printMessage(option.toString());
+        }
+        selectedCredit = CreditInput.values()[inputFromMenuBar(inputFromScanner(sc,buildRegEx(3)))];
+        return selectedCredit;
     }
 
 

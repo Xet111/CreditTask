@@ -1,7 +1,7 @@
 package xe.Model.creditfactory;
 
 public class IncreaseLineCredit extends Credit {
-    IncreaseLineCredit(){
+    public IncreaseLineCredit(){
         super();
     }
 

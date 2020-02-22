@@ -1,4 +1,5 @@
 package xe.View;
+import xe.Model.creditfactory.Credit;
 import xe.SupportedLanguages;
 
 import java.util.ArrayList;
@@ -29,6 +30,12 @@ public class View {
     public void setLocalization(SupportedLanguages lang) {
         currentLanguage = lang;
         bundle = ResourceBundle.getBundle(BUNDLE_NAME, SupportedLanguages.determineLocale(lang));
+    }
+    public void printArray(ArrayList<Credit> list){
+        for(Credit value:list){
+            System.out.println(value.toString());
+        }
+
     }
 
     public void printMessage(String message) { System.out.println(getLocalizedText(message)); }
