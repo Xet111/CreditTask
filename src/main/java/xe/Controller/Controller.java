@@ -24,12 +24,12 @@ public class Controller {
     public void processUser(){
         Scanner scanner = new Scanner(System.in);
         model.generateArray(60);
-        view.printArray(model.getActiveCredit());
         selectLanguage(scanner);
         model.filterOnAmount(selectAmountOfMoney(scanner));
         model.filterOnTerm(selectTermOfCredit(scanner));
         model.filterOnCredit(selectCredit(scanner));
         view.printArray(model.getChosenCredit());
+
 
 
     }

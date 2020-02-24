@@ -1,4 +1,5 @@
 package xe.Model.creditfactory;
+import xe.View.View;
 import xe.View.databank.AmountOfMoney;
 import xe.View.databank.Bank;
 import xe.View.databank.Term;
@@ -89,7 +90,7 @@ public abstract class Credit {
                 "amount=" + amount +
                 ", monthPercent=" + monthPercent +
                 ", term=" + term +
-                ", bank='" + bank + '\'' +
+                ", bank='" + new View().getLocalizedText( bank )+ '\'' +
                 '}';
     }
 }
